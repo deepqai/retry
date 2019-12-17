@@ -45,7 +45,7 @@ retry()
     fi
 
     P="$1"
-    for param in "${@:2}"; do param=${param//\"/\\\"}; param=${param//\'/\'\\\'\'}; P="$P '${param}'"; done
+    for param in "${@:2}"; do param=${param//\'/\'\\\'\'}; P="$P '${param}'"; done
     #TODO: replace single quotes in each arg with '"'"' ?
     export RETRY_ATTEMPT=$attempts
     bash -c "$P"
